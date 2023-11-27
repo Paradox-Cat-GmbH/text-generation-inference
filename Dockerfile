@@ -101,6 +101,8 @@ RUN make build-flash-attention
 # Build Flash Attention v2 CUDA kernels
 FROM kernel-builder as flash-att-v2-builder
 
+ARG MAX_JOBS=2
+
 WORKDIR /usr/src
 
 COPY server/Makefile-flash-att-v2 Makefile
